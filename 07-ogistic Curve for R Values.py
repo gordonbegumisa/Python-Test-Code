@@ -1,3 +1,4 @@
+# Logistic Curves vs R values
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -53,7 +54,7 @@ logistic.plot(x ='t', y=12, kind = 'line', ax=ax)
 logistic.plot(x ='t', y=13, kind = 'line', ax=ax)
 logistic.plot(x ='t', y=14, kind = 'line', ax=ax)
 
-plt.title('Logistic Curves')
+plt.title('Logistic Curves vs R values')
 plt.legend(["r = 1.0", "r = 1.3", "r = 1.6", "r = 1.9" , "r = 2.2"])
 plt.xlabel('t')
 plt.ylabel('N')

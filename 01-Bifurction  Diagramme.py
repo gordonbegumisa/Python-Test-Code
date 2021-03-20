@@ -1,3 +1,5 @@
+# This code plots a simple bifurcation diagram for the logistic map using a while loop
+
 import matplotlib.pyplot as plt
 
 

@@ -1,3 +1,4 @@
+# Comparason of Caclulating pi
 from decimal import *
 import math
 import numpy as np

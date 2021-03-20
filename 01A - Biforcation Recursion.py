@@ -1,3 +1,4 @@
+# This code plots a simple bifurcation diagram for the logistic map using a recursion
 
 import matplotlib.pylab as plt
 
