@@ -23,14 +23,17 @@ for i in range(10000):
     v = ((d0*H*(gS-gL)) + (d0*(1+gL)))/(r-gL) # H - Growth Model
     data.append(v)
 
-print('Mean Price', np.mean(data))
-print('Median Price', np.median(data))
-print('STD', np.std(data))
-print('Min Price', np.min(data))
-print('Max Price', np.max(data))
+print('Mean Price ($)', np.mean(data))
+print('Median Price ($)', np.median(data))
+print('STD ($)', np.std(data))
+print('Min Price ($)', np.min(data))
+print('Max Price ($)', np.max(data))
 
 sns.distplot(data)
+
+plt.title("Present Stock Value Using the H-Model")
 plt.ylabel("Frequency")
-plt.xlabel("Market Value")
+plt.xlabel("Value($)")
+plt.savefig('100-QF-H-Model')
 plt.show()
 
