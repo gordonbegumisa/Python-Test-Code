@@ -4,29 +4,31 @@ import seaborn as sns
 from scipy.fftpack import fft
 sns.set()
 
+#  Site Time intervals
 limit = 5
 i = 0.001
 t = np.arange(1, limit, i)
 
 # create composite signal a(t)
 f = 1
-a = 3*np.sin(2*np.pi*f*t)
-f += 3
-a += np.sin(2*np.pi*f*t)
-f += 3
-a += 0.5 * np.sin(2*np.pi*f*t)
+a = 1
+while f < 12:
+    a += (f ^ 2)*np.sin(2*np.pi*f*t)
+    f += 4
 
 # Analysing Function dot product g(t)
-i = 1j
+i = 0 + 1j
 f = 1
-g1 = a*np.exp(-i*2*np.pi*f*t)
-f += 3
-g2 = a*np.exp(-i*2*np.pi*f*t)
-f += 3
-g3 = a*np.exp(-i*2*np.pi*f*t)
+while f < 12:
+    g = a*np.exp(-i*2*np.pi*f*t)
+    col = (np.random.random(), np.random.random(), np.random.random())
+    plt.plot(g.real, g.imag, color=col, label="Original Signal")
+    f += 5
 
-# Draw with analysing function
-f = 1
+plt.title('Function g(f)')
+plt.ylabel('Imaginary')
+plt.xlabel('Real')
+plt.show()
 
 # FFT
 sr = 2000
@@ -36,19 +38,9 @@ n = np.arange(N)
 T = N/sr
 freq = n/T
 
-plt.figure(2)
-plt.title('Function g(f)')
-plt.ylabel('Imaginary')
-plt.xlabel('Real')
-plt.plot(g1.real, g1.imag, color='blue', label="Original Signal")
-plt.plot(g2.real, g2.imag, color='red', label="Original Signal")
-plt.plot(g3.real, g3.imag, color='green', label="Original Signal")
-
 plt.figure(figsize=(12, 6))
 plt.subplot(121)
-plt.stem(freq, np.abs(X), 'b', \
-         markerfmt=" ", basefmt="-b")
-
+plt.stem(freq, np.abs(X), 'b', markerfmt=" ", basefmt="-b")
 plt.xlabel('Freq (Hz)')
 plt.ylabel('FFT Amplitude |X(freq)|')
 plt.xlim(0, 20)
