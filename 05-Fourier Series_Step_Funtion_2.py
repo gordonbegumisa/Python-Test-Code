@@ -6,14 +6,15 @@ import seaborn as sns
 sns.set()
 
 x = np.linspace(-1, 1, 500)
-y = 1
+y = 0
 i = 1
+limit = 32
 
-while i < 31:
-    y += 4*np.sin(i*np.pi*x)/i
+while i < limit:
+    y += 4*np.sin(i*np.pi*x)/(i*np.pi)
+    i += 2
     col = (np.random.random(), np.random.random(), np.random.random())
     plt.plot(x, y, color=col)
-    i += 2
 
 plt.title('Fourier Series to Approximate the Step Function')
 plt.xlabel('x')

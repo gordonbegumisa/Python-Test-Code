@@ -10,20 +10,21 @@ i = 0.001
 t = np.arange(1, limit, i)
 
 # create composite signal a(t)
-f = 1
-a = 1
-while f < 12:
+f = 0
+a = 0
+limit = 12
+while f < limit:
     a += (f ^ 2)*np.sin(2*np.pi*f*t)
     f += 4
 
 # Analysing Function dot product g(t)
 i = 0 + 1j
-f = 1
-while f < 12:
+f = 0
+while f < limit:
     g = a*np.exp(-i*2*np.pi*f*t)
     col = (np.random.random(), np.random.random(), np.random.random())
     plt.plot(g.real, g.imag, color=col, label="Original Signal")
-    f += 5
+    f += 4
 
 plt.title('Function g(f)')
 plt.ylabel('Imaginary')

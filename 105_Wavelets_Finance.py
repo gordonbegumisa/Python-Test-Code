@@ -1,11 +1,12 @@
-import pywt
+import matplotlib.gridspec as gridspec
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import pywt
 from scipy.fftpack import fft
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
 
-# Load the el-Nino time-series dataset
+# Google time-series dataset
+
 dataset = "https://raw.githubusercontent.com/taspinar/siml/master/datasets/sst_nino3.dat.txt"
 df_nino = pd.read_table(dataset)
 N = df_nino.shape[0]
