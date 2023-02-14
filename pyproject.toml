@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "repl_nix_Python-Test-Code"
+version = "0.1.0"
+description = ""
+authors = ["Replit user <<>>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ptwt = "^0.1.4"
+pandas = "^1.5.3"
+numpy = "^1.24.2"
+matplotlib = "^3.6.3"
+seaborn = "^0.12.2"
+Quandl = "^3.7.0"
+yfinance = "^0.2.11"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

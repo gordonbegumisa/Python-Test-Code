@@ -1,0 +1,22 @@
+import pywt
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate a test signal
+t = np.linspace(-1, 1, 200, endpoint=False)
+sig = np.cos(2*np.pi*7*t) + np.sin(2*np.pi*2.5*t)
+
+# Define wavelet parameters
+scales = np.arange(1, 31)
+waveletname = 'morl'
+
+# Compute the CWT
+coef, freqs = pywt.cwt(sig, scales, waveletname, 1)
+
+# Plot the scalogram
+plt.figure(figsize=(10, 6))
+plt.imshow(np.abs(coef), aspect='auto', cmap='coolwarm')
+plt.xlabel('Time (samples)')
+plt.ylabel('Scale')
+plt.colorbar()
+plt.show()

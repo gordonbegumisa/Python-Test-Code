@@ -1,0 +1,20 @@
+from decimal import *
+import math
+
+limit = 50
+getcontext().prec = limit
+e = Decimal(1)
+n = 1
+factorial = 1
+
+while n <= limit:
+    factorial *= n
+    e += Decimal(1) / Decimal(factorial)
+    n += 1
+
+enp = Decimal(math.exp(1))
+error = enp - e
+
+print("e (numpy) = ", enp)
+print("e (custom) = ", e)
+print("error = ", error)

@@ -1,6 +1,6 @@
 # Calculating Euler's Constant by infinite series
 
-from decimal import *
+from decimal2 import *
 import math
 
 # Sets decimal to n digits of precision

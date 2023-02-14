@@ -13,7 +13,7 @@ limit = 32
 while i < limit:
     y += 4*np.sin(i*np.pi*x)/(i*np.pi)
     i += 2
-    col = (np.random.random(), np.random.random(), np.random.random())
+    col = (np.random.random(), np.random.random(), m    np.random.random())
     plt.plot(x, y, color=col)
 
 plt.title('Fourier Series to Approximate the Step Function')
